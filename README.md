@@ -21,3 +21,6 @@ samples, guidance on mobile development, and a full API reference.
 Part 1 Shopping App
 
 [A Job Landing Course | Flutter E-commerce App With Backend | Food Delivery App | Part 1](https://www.youtube.com/watch?v=7dAt-JMSCVQ&feature=youtu.be)
+
+## Time Stamp
+15:12
