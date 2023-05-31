@@ -14,7 +14,7 @@ class _MainFoodPaageState extends State<MainFoodPaage> {
       child: Container(
         child: Row(
           children: [
-            Column(
+            const Column(
               children: [
                 Text("Country"),
                 Text("City"),
