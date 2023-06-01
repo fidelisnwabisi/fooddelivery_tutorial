@@ -56,8 +56,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                BigText(text: "Chinese Side"),
-                SizedBox(height: 10),
+                const BigText(text: "Chinese Side"),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Wrap(
@@ -72,16 +72,20 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         },
                       ),
                     ),
-                    SizedBox(width: 10),
-                    SmallText(text: "4.5"),
-                    SizedBox(width: 10),
-                    SmallText(text: "1287"),
-                    SizedBox(width: 10),
-                    SmallText(text: "Comments"),
+                    const SizedBox(width: 10),
+                    const SmallText(text: "4.5"),
+                    const SizedBox(width: 10),
+                    const SmallText(text: "1287"),
+                    const SizedBox(width: 10),
+                    const SmallText(text: "Comments"),
                   ],
                 ),
-                SizedBox(height: 20),
-                Row(),
+                const SizedBox(height: 20),
+                const Row(
+                  children: [
+                    // Reusable Text Widget
+                  ],
+                ),
               ],
             ),
           ),
