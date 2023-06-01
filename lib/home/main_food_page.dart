@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fooddelivery_tutorial/utils/colors.dart';
+import 'package:fooddelivery_tutorial/widgets/big_text.dart';
+import 'package:fooddelivery_tutorial/widgets/small_text.dart';
 
 class MainFoodPaage extends StatefulWidget {
   const MainFoodPaage({super.key});
@@ -15,28 +18,36 @@ class _MainFoodPaageState extends State<MainFoodPaage> {
         children: [
           Container(
             child: Container(
-              margin: EdgeInsets.only(top: 45, bottom: 15),
-              padding: EdgeInsets.only(left: 20, right: 20),
+              margin: const EdgeInsets.only(top: 45, bottom: 15),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
+                  Column(
                     children: [
-                      Text("Country"),
-                      Text("City"),
+                      BigText(
+                        text: "Nigeria",
+                        color: AppColors.mainColor,
+                      ),
+                      const Row(
+                        children: [
+                          SmallText(text: "Nsugbe", color: Colors.black54),
+                          Icon(Icons.arrow_drop_down_rounded)
+                        ],
+                      ),
                     ],
                   ),
                   Center(
                     child: Container(
                       width: 45,
                       height: 45,
-                      child: Icon(
+                      child: const Icon(
                         Icons.search,
                         color: Colors.white,
                       ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Colors.blue),
+                          color: AppColors.mainColor),
                     ),
                   ),
                 ],
