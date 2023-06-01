@@ -24,4 +24,4 @@ Part 1 Shopping App
 
 ## Time Stamp
 
-39:36
+01:14:21
