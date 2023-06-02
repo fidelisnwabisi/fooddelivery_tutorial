@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery_tutorial/utils/colors.dart';
+import 'package:fooddelivery_tutorial/utils/dimensions.dart';
 import 'package:fooddelivery_tutorial/widgets/big_text.dart';
 import 'package:fooddelivery_tutorial/widgets/icon_and_text_widget.dart';
 import 'package:fooddelivery_tutorial/widgets/small_text.dart';
@@ -16,7 +17,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
   double _scaleFactor = 0.8;
-  double _height = 220;
+  double _height = Dimensions.pageViewContainer;
 
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       children: [
         Container(
           // color: Colors.red,
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -94,7 +95,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       transform: matrix,
       child: Stack(children: [
         Container(
-          height: 220,
+          height: Dimensions.pageViewContainer,
           margin: const EdgeInsets.only(left: 10, right: 10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
@@ -110,7 +111,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 120,
+            height: Dimensions.pageViewTextContainer,
             margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -132,12 +133,15 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ],
             ),
             child: Container(
-              padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+              padding: EdgeInsets.only(
+                  top: Dimensions.height15,
+                  left: Dimensions.height15,
+                  right: Dimensions.height15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const BigText(text: "Chinese Side"),
-                  const SizedBox(height: 10),
+                  SizedBox(height: Dimensions.height10),
                   Row(
                     children: [
                       Wrap(
@@ -147,7 +151,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             return Icon(
                               Icons.star,
                               color: AppColors.mainColor,
-                              size: 15,
+                              size: Dimensions.font15,
                             );
                           },
                         ),
@@ -160,24 +164,27 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       const SmallText(text: "Comments"),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: Dimensions.height20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       // Reusable Icon and Text Widget
                       IconAndTextWidget(
                         icon: Icons.circle_sharp,
+                        size: Dimensions.font15,
                         text: "Normal",
                         iconColor: AppColors.iconColor1,
                       ),
 
                       IconAndTextWidget(
                         icon: Icons.location_on,
+                        size: Dimensions.font20,
                         text: "1.7km",
                         iconColor: AppColors.mainColor,
                       ),
                       IconAndTextWidget(
                         icon: Icons.access_time_rounded,
+                        size: Dimensions.font10,
                         text: "31min",
                         iconColor: AppColors.iconColor2,
                       ),
