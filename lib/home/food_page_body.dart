@@ -69,11 +69,20 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         //Popular Text Section
         Container(
           margin: EdgeInsets.only(left: Dimensions.width30),
-          child: const Row(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              BigText(
-                text: "Popular",
-              )
+              const BigText(text: "Popular"),
+              SizedBox(width: Dimensions.width10),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: const BigText(text: ".", color: Colors.black26),
+              ),
+              SizedBox(width: Dimensions.width10),
+              Container(
+                margin: const EdgeInsets.only(bottom: 2),
+                child: const SmallText(text: "Food Pairing"),
+              ),
             ],
           ),
         )
