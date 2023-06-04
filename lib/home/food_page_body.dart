@@ -39,6 +39,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // Slider Section
         Container(
           // color: Colors.red,
           height: Dimensions.pageView,
@@ -49,6 +50,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 return _buildPageItem(position);
               }),
         ),
+
+        //Dots Section
         DotsIndicator(
           dotsCount: 5,
           position: _currPageValue.toInt(),
@@ -58,6 +61,20 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             activeSize: const Size(18.0, 9.0),
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
+          ),
+        ),
+
+        SizedBox(height: Dimensions.height30),
+
+        //Popular Text Section
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: const Row(
+            children: [
+              BigText(
+                text: "Popular",
+              )
+            ],
           ),
         )
       ],
@@ -93,114 +110,116 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
     return Transform(
       transform: matrix,
-      child: Stack(children: [
-        Container(
-          height: Dimensions.pageViewContainer,
-          margin: EdgeInsets.only(
-              left: Dimensions.width10, right: Dimensions.width10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
-            color: index.isEven
-                ? const Color(0xFF69c5df)
-                : const Color(0xFF9294cc),
-            image: const DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage("assets/image/food0.png"),
-            ),
-          ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: Dimensions.pageViewTextContainer,
+      child: Stack(
+        children: [
+          Container(
+            height: Dimensions.pageViewContainer,
             margin: EdgeInsets.only(
-              left: Dimensions.width30,
-              right: Dimensions.width30,
-              bottom: Dimensions.height30,
-            ),
+                left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Dimensions.radius20),
-              color: Colors.white,
-              boxShadow: const [
-                BoxShadow(
-                  color: Color(0xFFe8e8e8),
-                  blurRadius: 5.0,
-                  offset: Offset(0, 5),
-                ),
-                BoxShadow(
-                  color: Colors.white,
-                  offset: Offset(-5, 0),
-                ),
-                BoxShadow(
-                  color: Colors.white,
-                  offset: Offset(5, 0),
-                ),
-              ],
-            ),
-            child: Container(
-              padding: EdgeInsets.only(
-                  top: Dimensions.height15,
-                  left: Dimensions.height15,
-                  right: Dimensions.height15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const BigText(text: "Chinese Side"),
-                  SizedBox(height: Dimensions.height10),
-                  Row(
-                    children: [
-                      Wrap(
-                        children: List.generate(
-                          5,
-                          (index) {
-                            return Icon(
-                              Icons.star,
-                              color: AppColors.mainColor,
-                              size: Dimensions.font15,
-                            );
-                          },
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      const SmallText(text: "4.5"),
-                      const SizedBox(width: 10),
-                      const SmallText(text: "1287"),
-                      const SizedBox(width: 10),
-                      const SmallText(text: "Comments"),
-                    ],
-                  ),
-                  SizedBox(height: Dimensions.height20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Reusable Icon and Text Widget
-                      IconAndTextWidget(
-                        icon: Icons.circle_sharp,
-                        size: Dimensions.font15,
-                        text: "Normal",
-                        iconColor: AppColors.iconColor1,
-                      ),
-
-                      IconAndTextWidget(
-                        icon: Icons.location_on,
-                        size: Dimensions.font20,
-                        text: "1.7km",
-                        iconColor: AppColors.mainColor,
-                      ),
-                      IconAndTextWidget(
-                        icon: Icons.access_time_rounded,
-                        size: Dimensions.font10,
-                        text: "31min",
-                        iconColor: AppColors.iconColor2,
-                      ),
-                    ],
-                  ),
-                ],
+              borderRadius: BorderRadius.circular(Dimensions.radius30),
+              color: index.isEven
+                  ? const Color(0xFF69c5df)
+                  : const Color(0xFF9294cc),
+              image: const DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("assets/image/food0.png"),
               ),
             ),
           ),
-        ),
-      ]),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: Dimensions.pageViewTextContainer,
+              margin: EdgeInsets.only(
+                left: Dimensions.width30,
+                right: Dimensions.width30,
+                bottom: Dimensions.height30,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: Colors.white,
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xFFe8e8e8),
+                    blurRadius: 5.0,
+                    offset: Offset(0, 5),
+                  ),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(-5, 0),
+                  ),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(5, 0),
+                  ),
+                ],
+              ),
+              child: Container(
+                padding: EdgeInsets.only(
+                    top: Dimensions.height15,
+                    left: Dimensions.height15,
+                    right: Dimensions.height15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const BigText(text: "Chinese Side"),
+                    SizedBox(height: Dimensions.height10),
+                    Row(
+                      children: [
+                        Wrap(
+                          children: List.generate(
+                            5,
+                            (index) {
+                              return Icon(
+                                Icons.star,
+                                color: AppColors.mainColor,
+                                size: Dimensions.font20,
+                              );
+                            },
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        const SmallText(text: "4.5"),
+                        const SizedBox(width: 10),
+                        const SmallText(text: "1287"),
+                        const SizedBox(width: 10),
+                        const SmallText(text: "Comments"),
+                      ],
+                    ),
+                    SizedBox(height: Dimensions.height20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Reusable Icon and Text Widget
+                        IconAndTextWidget(
+                          icon: Icons.circle_sharp,
+                          size: Dimensions.font15,
+                          text: "Normal",
+                          iconColor: AppColors.iconColor1,
+                        ),
+
+                        IconAndTextWidget(
+                          icon: Icons.location_on,
+                          size: Dimensions.font20,
+                          text: "1.7km",
+                          iconColor: AppColors.mainColor,
+                        ),
+                        IconAndTextWidget(
+                          icon: Icons.access_time_rounded,
+                          size: Dimensions.font10,
+                          text: "31min",
+                          iconColor: AppColors.iconColor2,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
